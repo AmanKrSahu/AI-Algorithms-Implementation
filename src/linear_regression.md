@@ -40,14 +40,6 @@ Linear Regression establishes a relationship between the dependent variable (Y) 
     - $( \hat{Y_i} )$ is the predicted value.
     - $( n )$ is the number of data points.
 
-3. Coefficient Estimation (Ordinary Least Squares)
-
-    $\beta = (X^TX)^{-1}X^TY$
-
-    Where:
-    - $( X )$ is the matrix of predictor variables.
-    - $( Y )$ is the vector of target variables.
-
 ## Gradient Descent
 
 Gradient Descent is an optimization algorithm used to minimize the cost function by iteratively adjusting the model parameters. 
