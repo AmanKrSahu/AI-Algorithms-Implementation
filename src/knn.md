@@ -23,25 +23,25 @@ KNN is a type of instance-based learning, or lazy learning, where the function i
 
 ## Mathematical Equations
 
-### Distance Metrics
+1. Distance Metrics
 
-1. **Euclidean Distance**: 
-   $d(p, q) = \sqrt{\sum_{i=1}^{n} (p_i - q_i)^2}$
-   
-2. **Manhattan Distance**: 
-   $d(p, q) = \sum_{i=1}^{n} |p_i - q_i|$
+    - **Euclidean Distance**: 
+    $d(p, q) = \sqrt{\sum_{i=1}^{n} (p_i - q_i)^2}$
+    
+    - **Manhattan Distance**: 
+    $d(p, q) = \sum_{i=1}^{n} |p_i - q_i|$
 
-### Classification Decision Rule
+2.  Classification Decision Rule
 
-- **Majority Vote**: For classification, the class label with the highest frequency among the K nearest neighbors is chosen.
+    **Majority Vote**: For classification, the class label with the highest frequency among the K nearest neighbors is chosen.
 
-   $\hat{y} = \arg\max_{y \in Y} \sum_{i=1}^{K} \mathbb{1}(y_i = y)$
+    $\hat{y} = \arg\max_{y \in Y} \sum_{i=1}^{K} \mathbb{1}(y_i = y)$
 
-### Regression Decision Rule
+3. Regression Decision Rule
 
-- **Average**: For regression, the average of the K nearest neighbors' values is taken.
+    **Average**: For regression, the average of the K nearest neighbors' values is taken.
 
-   $\hat{y} = \frac{1}{K} \sum_{i=1}^{K} y_i$
+    $\hat{y} = \frac{1}{K} \sum_{i=1}^{K} y_i$
 
 ## Code Implementation
 
@@ -68,13 +68,10 @@ class KNN:
         return predictions
 
     def _predict(self, x):
-        # Compute the distance
         distances = [euclidian_distance(x, x_train) for x_train in self.X_train]
 
-        # Get the closest k
         k_indices = np.argsort(distances)[:self.k]
         k_nearest_labels = [self.y_train[i] for i in k_indices]
 
-        # Majority vote
         most_common = Counter(k_nearest_labels).most_common()
         return most_common[0][0]
