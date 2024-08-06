@@ -7,7 +7,6 @@ K-Nearest Neighbors (KNN) is a simple, supervised machine learning algorithm tha
 - [Algorithm Steps](#algorithm-steps)
 - [Mathematical Equations](#mathematical-equations)
 - [Code Implementation](#code-implementation)
-- [Conclusion](#conclusion)
 
 ## Introduction
 
